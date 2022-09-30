@@ -1,0 +1,18 @@
+<div *ngIf="ordersList.length == 0">
+    <h3>No orders for {{email}}</h3>
+</div>
+
+
+<div *ngIf="ordersList.length > 0">
+    <div>
+        <h3>Orders for {{email}}</h3>
+    </div>
+    <div *ngFor="let o of ordersList" class="order">
+        <h5>Order Id: {{o.orderId}}</h5>
+        <h5>${{o.amount | number : '1.2-2'}}</h5>
+    </div>
+</div>
+
+<div>
+    <button type="button" [routerLink]="['/']">Back</button>
+</div>
